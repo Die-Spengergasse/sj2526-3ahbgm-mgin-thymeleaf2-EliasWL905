@@ -12,8 +12,11 @@ public class HelloController {
 
     @GetMapping("")
     public  String index(Model model) {
+        // add date to model
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         model.addAttribute("today", LocalDate.now().format(dtf));
+        // gibt uns das Template index.html zurück, das wir in src/main/resources/templates/ angelegt haben
+        // Endpoints geben immer den Namen des Templates zurück, das sie rendern sollen
         return "index";
     }
 }
