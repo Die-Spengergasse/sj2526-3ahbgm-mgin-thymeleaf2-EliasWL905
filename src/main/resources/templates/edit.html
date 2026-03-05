@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fahrzeug bearbeiten</title>
+    <link rel="stylesheet" th:href="@{/design.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Fahrzeug bearbeiten</h2>
+    <form th:action="@{/autohausmanager/edit(id=${Autos.id})}" th:object="${Autos}" method="post">
+        <div class="form-group">
+            <label>Modellname</label>
+            <input type="text" th:field="*{modellname}" class="form-control" placeholder="z.B. Z4">
+        </div>
+        <div class="form-group">
+            <label>Hersteller</label>
+            <input type="text" th:field="*{hersteller}" class="form-control" placeholder="z.B. BMW">
+        </div>
+        <div class="form-group">
+            <label>Baujahr</label>
+            <input type="text" th:field="*{baujahr}" class="form-control" placeholder="z.B. 2022">
+        </div>
+        <div class="form-group">
+            <label>Farbe</label>
+            <input type="text" th:field="*{farbe}" class="form-control" placeholder="z.B. Rot">
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">Speichern</button>
+            <a th:href="@{/autohausmanager/list}">Abbrechen</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

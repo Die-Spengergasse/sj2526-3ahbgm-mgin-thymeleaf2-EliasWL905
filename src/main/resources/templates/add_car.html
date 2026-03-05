@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Neues Auto hinzufügen</title>
+
+    <link rel="stylesheet" th:href="@{/design.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Neues Auto eintragen</h2>
+    <form th:action="@{/autohausmanager/add}" th:object="${Autos}" method="post">
+        <div class="form-group">
+            <label>Modellname</label>
+            <input type="text" th:field="*{modellname}" class="form-control" placeholder="z.B. Z4">
+        </div>
+        <div class="form-group">
+            <label>Hersteller</label>
+            <input type="text" th:field="*{hersteller}" class="form-control" placeholder="z.B. BMW">
+        </div>
+        <div class="form-group">
+            <label>Baujahr</label>
+            <input type="text" th:field="*{baujahr}" class="form-control" placeholder="z.B. 2022">
+        </div>
+        <div class="form-group">
+            <label>Farbe</label>
+            <input type="text" th:field="*{farbe}" class="form-control" placeholder="z.B. Rot">
+        </div>
+
+        <button type="submit" class="btn btn-success">Speichern</button>
+        <a href="/autohausmanager/list" class="btn btn-default">Abbrechen</a>
+    </form>
+</div>
+</body>
+</html>

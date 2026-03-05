@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Greeting</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Startseite</title>
+    <link rel="stylesheet" th:href="@{/design.css}">
 </head>
 <body>
 <div class="container">
-    <h1>Hallo</h1>
-    Datum: <span th:text="${today}"></span>
+    <h1>Willkommen beim Autohaus-Manager</h1>
+    <p>Datum: <span th:text="${currentDateTime}"></span></p>
     <div>
-        <a href="/patient/list">patient list</a>
+        <a href="/autohausmanager/list" class="btn btn-primary">Liste aller Autos anzeigen</a>
+        <a href="/autohausmanager/add" class="btn btn-success">Neues Auto hinzufügen</a>
+
     </div>
 </div>
 </body>
+
 </html>
